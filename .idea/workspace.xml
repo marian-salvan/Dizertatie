@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="774a9b5b-72a8-43b0-b420-1a0b8facc699" name="Default Changelist" comment="" />
+    <list default="true" id="774a9b5b-72a8-43b0-b420-1a0b8facc699" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/one_second_data/result.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/one_second_data_past/result.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/ten_seconds_data/result.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/thirty_seconds_data/result.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/one_second_inlet_probe_1_rack_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/one_second_past_inlet_probe_1_rack_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/ten_seconds_inlet_probe_1_rack_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/one_second_prediction.py" beforeDir="false" afterPath="$PROJECT_DIR$/one_second_prediction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +29,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1aOunQ3ynnFMhXC7mZx1r02iEHY" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -25,19 +40,24 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/results/twenty_seconds_data" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Marian Salvan\PycharmProjects\Dizertatie\data\one_second_data" />
-      <recent name="C:\Users\Marian Salvan\PycharmProjects\Dizertatie\data\ten_seconds_data" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Marian Salvan\PycharmProjects\Dizertatie\results\one_second_data" />
       <recent name="C:\Users\Marian Salvan\PycharmProjects\Dizertatie\data" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Marian Salvan\PycharmProjects\Dizertatie\results\twenty_seconds_data" />
+      <recent name="C:\Users\Marian Salvan\PycharmProjects\Dizertatie\results\thirty_seconds_data" />
+      <recent name="C:\Users\Marian Salvan\PycharmProjects\Dizertatie\results\ten_seconds_data" />
+      <recent name="C:\Users\Marian Salvan\PycharmProjects\Dizertatie\results\one_second_data_past" />
+      <recent name="C:\Users\Marian Salvan\PycharmProjects\Dizertatie\results" />
+    </key>
   </component>
-  <component name="RunManager" selected="Python.ten_seconds_prediction">
+  <component name="RunManager" selected="Python.one_second_prediction (1)">
     <configuration name="one_second_prediction (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Dizertatie" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -145,11 +165,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.one_second_prediction (1)" />
+        <item itemvalue="Python.preprocessing" />
         <item itemvalue="Python.ten_seconds_prediction" />
         <item itemvalue="Python.one_second_prediction_past" />
-        <item itemvalue="Python.one_second_prediction (1)" />
         <item itemvalue="Python.one_second_prediction" />
-        <item itemvalue="Python.preprocessing" />
       </list>
     </recent_temporary>
   </component>
@@ -211,22 +231,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587306023632" />
-    <state width="1515" height="233" key="GridCell.Tab.0.bottom" timestamp="1587315631469">
+    <state width="1515" height="288" key="GridCell.Tab.0.bottom" timestamp="1587834982985">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="233" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587315631469" />
-    <state width="1515" height="233" key="GridCell.Tab.0.center" timestamp="1587315631469">
+    <state width="1515" height="288" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587834982985" />
+    <state width="1515" height="288" key="GridCell.Tab.0.center" timestamp="1587834982984">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="233" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587315631469" />
-    <state width="1515" height="233" key="GridCell.Tab.0.left" timestamp="1587315631469">
+    <state width="1515" height="288" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587834982984" />
+    <state width="1515" height="288" key="GridCell.Tab.0.left" timestamp="1587834982984">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="233" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587315631469" />
-    <state width="1515" height="233" key="GridCell.Tab.0.right" timestamp="1587315631469">
+    <state width="1515" height="288" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587834982984" />
+    <state width="1515" height="288" key="GridCell.Tab.0.right" timestamp="1587834982984">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="233" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587315631469" />
+    <state width="1515" height="288" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587834982984" />
     <state width="1515" height="261" key="GridCell.Tab.1.bottom" timestamp="1587308046350">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -243,21 +263,21 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1515" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1587308046350" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1587382834778">
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1587829630156">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1587382834778" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1587302389325">
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1587829630156" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1587831083129">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1587302389325" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1587831083129" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/preprocessing.py</url>
-          <line>69</line>
+          <line>114</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">

@@ -1,0 +1,4 @@
+Column: inlet_probe_1_rack_1
+Test loss, Test r2
+0.00876931345487799 0.9756937026977539
+

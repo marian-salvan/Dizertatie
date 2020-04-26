@@ -25,13 +25,17 @@ def r2_keras(y_true, y_pred):
 
 
 def plot_predictions(real, predicted, column):
-    plt.plot(np.arange(60), real, np.arange(60), predicted)
-    plt.legend(('Real temperature', 'Predicted temperature'))
-    plt.xlabel('Sample number')
-    plt.ylabel('Temperature')
-    plt.title(column)
+    fig, ax = plt.subplots()
+    line1, = ax.plot(np.arange(60), real)
+    line2, = ax.plot(np.arange(60), predicted)
+    line1.set_label('Real temperature')
+    line2.set_label('Predicted temperature')
+    ax.set_title(column)
+    ax.set_xlabel('Sample number')
+    ax.set_ylabel('Temperature')
+    ax.legend()
     plt.savefig('./images/one_second_data/' + column + '.png')
-    # plt.show()
+    plt.close(fig)
 
 
 for column in OUTPUTS:
@@ -110,8 +114,8 @@ for column in OUTPUTS:
     plot_predictions(real_temperature[:60], predicted_temperature[:60], column)
 
     # plot data to see relationships in training and validation data
-    epoch_list = list(range(1, len(hist.history['r2_keras']) + 1))  # values for x axis [1, 2, .., # of epochs]
-    plt.plot(epoch_list, hist.history['r2_keras'], epoch_list, hist.history['val_r2_keras'])
-    plt.legend(('Training r2_keras', 'Validation r2_keras'))
-    plt.savefig('./images/one_second_data/' + column + '_learning.png')
+    # epoch_list = list(range(1, len(hist.history['r2_keras']) + 1))  # values for x axis [1, 2, .., # of epochs]
+    # plt2.plot(epoch_list, hist.history['r2_keras'], epoch_list, hist.history['val_r2_keras'])
+    # plt2.legend(('Training r2_keras', 'Validation r2_keras'))
+    # plt2.savefig('./images/one_second_data/' + column + '_learning.png')
     # plt.show()

@@ -26,6 +26,16 @@ def plot_predictions(real, predicted, column):
     plt.savefig('./images/one_second_past_inlet_probe_1_rack_1.png')
     plt.show()
 
+    # Create just a figure and only one subplot
+    fig, ax = plt.subplots()
+    ax.plot(x, y)
+    ax.set_title('Simple plot')
+    ax.set_xlabel('test')
+    ax.set_ylabel('test')
+
+    plt.show()
+    plt.close(fig)
+
 
 df = pd.read_csv("./data/data_1_second.csv")
 

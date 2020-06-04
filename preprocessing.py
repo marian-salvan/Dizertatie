@@ -2,8 +2,8 @@ import pandas as pd  # pandas is a dataframe library
 import numpy as np
 from sklearn.preprocessing import MinMaxScaler
 
-PAST_DATA_SAMPLE_NUMBER = 40
-FUTURE_DATA_SAMPLE_NUMBER = 19
+PAST_DATA_SAMPLE_NUMBER = 60
+FUTURE_DATA_SAMPLE_NUMBER = 29
 
 INLET_TEMPERATURES = ['inlet_probe_1_rack_1', 'inlet_probe_2_rack_1', 'inlet_probe_3_rack_1', 'inlet_probe_4_rack_1',
                       'inlet_probe_1_rack_2', 'inlet_probe_2_rack_2', 'inlet_probe_3_rack_2', 'inlet_probe_4_rack_2']
@@ -110,14 +110,14 @@ def create_dataset(column_list, type='inlet_server', folder="ten_seconds_data"):
 
         print(dataset.shape)
 
-        dataset.to_csv("./data/" + folder + "/" + column + ".csv", index=False)
+        dataset.to_csv("E:/data/" + folder + "/" + column + ".csv", index=False)
         print("done: " + column)
 
 
-create_dataset(INLET_TEMPERATURES, type="inlet_server", folder="twenty_seconds_data")
+create_dataset(INLET_TEMPERATURES, type="inlet_server", folder="thirty_seconds_data")
 # create_one_second_dataset(INLET_TEMPERATURES, type="inlet_server")
 print("Done inlet")
 
-create_dataset(OUTLET_TEMPERATURES, type="outlet_server", folder="twenty_seconds_data")
+create_dataset(OUTLET_TEMPERATURES, type="outlet_server", folder="thirty_seconds_data")
 # create_one_second_dataset(OUTLET_TEMPERATURES, type="outlet_server")
 print("Done outlet")

@@ -78,7 +78,7 @@ for column in OUTPUTS:
 
     # input shape = (6,)
     model.add(LSTM(65, input_shape=(X_train.shape[1], 1), return_sequences=True))
-    model.add(Dropout(0.2))
+    add(Dropout(0.2))
 
     model.add(LSTM(130, return_sequences=True))
     model.add(Dropout(0.2))
@@ -97,7 +97,7 @@ for column in OUTPUTS:
     plot_model(model, to_file="./images/thirty_seconds_data.png", show_shapes=True, show_layer_names=True)
 
     # train
-    BATCH_SIZE = 500
+    BATCH_SIZE = 750
     EPOCHS = 5
 
     cbk_early_stopping = EarlyStopping(monitor='val_r2_keras', mode='max')

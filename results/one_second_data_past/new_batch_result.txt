@@ -1,8 +1,56 @@
 Column: inlet_probe_1_rack_1
 Test loss, Test r2
-0.0034240577669094004 0.9950965046882629
+0.006451148953030506 0.9939530491828918
 
 Column: inlet_probe_2_rack_1
 Test loss, Test r2
-0.00240990384628127 0.9960160851478577
+0.005339616370429595 0.9951837062835693
+
+Column: inlet_probe_3_rack_1
+Test loss, Test r2
+0.0038788153461962937 0.9961361885070801
+
+Column: inlet_probe_4_rack_1
+Test loss, Test r2
+0.004946564606140057 0.9957941174507141
+
+Column: inlet_probe_1_rack_2
+Test loss, Test r2
+0.004019500802144408 0.9949753880500793
+
+Column: inlet_probe_2_rack_2
+Test loss, Test r2
+0.004419572782705227 0.9957861304283142
+
+Column: inlet_probe_3_rack_2
+Test loss, Test r2
+0.005166632255027692 0.9956477880477905
+
+Column: inlet_probe_4_rack_2
+Test loss, Test r2
+0.004790405322303374 0.9958412647247314
+
+Column: outlet_probe_1_rack_1
+Test loss, Test r2
+0.0022565917428309717 0.9970935583114624
+
+Column: outlet_probe_1_rack_2
+Test loss, Test r2
+0.005326884366442759 0.995574951171875
+
+Column: outlet_probe_1_room
+Test loss, Test r2
+0.006383133627027273 0.9949944615364075
+
+Column: outlet_probe_2_room
+Test loss, Test r2
+0.00615197412276268 0.9948058724403381
+
+Column: outlet_probe_3_room
+Test loss, Test r2
+0.003291379940092564 0.9964905977249146
+
+Column: outlet_probe_4_room
+Test loss, Test r2
+0.0030503989997754492 0.996550440788269
 

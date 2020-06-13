@@ -35,7 +35,7 @@ def plot_predictions(real, predicted, column):
     ax.set_xlabel('Second')
     ax.set_ylabel('Temperature')
     ax.legend()
-    plt.savefig('./images/twenty_seconds_data/no_dp_' + column + '.png')
+    plt.savefig('./images/twenty_seconds_data/' + column + '.png')
     plt.close(fig)
 
 
@@ -51,7 +51,7 @@ def plot_learning_rates(hist, column, score):
     ax.set_xlabel('Epoch')
     ax.set_ylabel('Score')
     ax.legend()
-    plt.savefig('./images/twenty_seconds_data/no_dp_' + score + '_' + column + '.png')
+    plt.savefig('./images/twenty_seconds_data/' + score + '_' + column + '.png')
     plt.close(fig)
 
 
@@ -79,15 +79,14 @@ for column in OUTPUTS:
     # minus one layer
     model = Sequential()
 
-    # input shape = (6,)
     model.add(LSTM(45, input_shape=(X_train.shape[1], 1), return_sequences=True))
-    # model.add(Dropout(0.2))
+    model.add(Dropout(0.2))
 
-    # model.add(LSTM(90, return_sequences=True))
-    # model.add(Dropout(0.2))
+    model.add(LSTM(90, return_sequences=True))
+    model.add(Dropout(0.2))
 
     model.add(LSTM(90))
-    # model.add(Dropout(0.2))
+    model.add(Dropout(0.2))
 
     model.add(Dense(20, activation='linear'))
 
@@ -97,7 +96,7 @@ for column in OUTPUTS:
                   metrics=[r2_keras])
 
     # save model to png
-    plot_model(model, to_file="./images/no_dp_twenty_seconds_prediction.png", show_shapes=True, show_layer_names=True)
+    plot_model(model, to_file="./images/twenty_seconds_prediction.png", show_shapes=True, show_layer_names=True)
 
     # train
     BATCH_SIZE = 500

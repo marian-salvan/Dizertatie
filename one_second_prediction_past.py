@@ -105,8 +105,8 @@ for column in OUTPUTS:
     cbk_early_stopping = EarlyStopping(monitor='val_loss', mode='min')
 
     hist = model.fit(X_train, y_train, BATCH_SIZE, epochs=EPOCHS,
-              validation_data=(X_test, y_test))
-              ##callbacks=[cbk_early_stopping])
+              validation_data=(X_test, y_test),
+              callbacks=[cbk_early_stopping])
 
     # save transfer learning model
     model.save('first-try.model')

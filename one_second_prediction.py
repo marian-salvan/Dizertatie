@@ -34,7 +34,23 @@ def plot_predictions(real, predicted, column):
     ax.set_xlabel('Sample number')
     ax.set_ylabel('Temperature')
     ax.legend()
-    plt.savefig('./images/one_second_data/' + column + '.png')
+    plt.savefig('./images/one_second_data/no_dp_' + column + '.png')
+    plt.close(fig)
+
+
+def plot_learning_rates(hist, column, score):
+    epoch_list = list(range(1, len(hist.history[score]) + 1))  # values for x axis [1, 2, .., # of epochs]
+
+    fig, ax = plt.subplots()
+    line1, = ax.plot(epoch_list, hist.history[score])
+    line2, = ax.plot(epoch_list, hist.history['val_' + score])
+    line1.set_label('Training ' + score)
+    line2.set_label('Validation ' + score)
+    ax.set_title(column)
+    ax.set_xlabel('Epoch')
+    ax.set_ylabel('Score')
+    ax.legend()
+    plt.savefig('./images/one_second_data/no_dp_' + score + '_' + column + '.png')
     plt.close(fig)
 
 
@@ -46,7 +62,7 @@ for column in OUTPUTS:
 
     X = df[feature_col_names].values  # predictor feature columns (10 X m)
     y = df[[column]].values  # predicted class column (1 X m)
-    split_test_size = 0.30
+    split_test_size = 0.2
 
     # normalize data
     scaler = MinMaxScaler()
@@ -62,13 +78,13 @@ for column in OUTPUTS:
 
     # input shape = (6,)
     model.add(LSTM(6, input_shape=(X_train.shape[1], 1), return_sequences=True))
-    model.add(Dropout(0.2))
+    #model.add(Dropout(0.2))
 
     model.add(LSTM(20, return_sequences=True))
-    model.add(Dropout(0.2))
+    #model.add(Dropout(0.2))
 
     model.add(LSTM(20))
-    model.add(Dropout(0.2))
+    #model.add(Dropout(0.2))
 
     model.add(Dense(1, activation='linear'))
 
@@ -78,7 +94,7 @@ for column in OUTPUTS:
                   metrics=[r2_keras])
 
     # save model to png
-    plot_model(model, to_file="./images/one_second_prediction.png", show_shapes=True, show_layer_names=True)
+    plot_model(model, to_file="./images/no_dp_one_second_prediction.png", show_shapes=True, show_layer_names=True)
 
     # train
     BATCH_SIZE = 500
@@ -97,7 +113,7 @@ for column in OUTPUTS:
     print('Test loss:', score[0])
     print('Test r2: ', score[1])
 
-    file = open("./results/one_second_data/result.txt", "a")
+    file = open("./results/one_second_data/result_no_dp.txt.txt", "a")
     file.write("Column: " + column + "\n")
     file.write("Test loss, Test r2" + "\n")
     file.write(str(score[0]) + " " + str(score[1]) + "\n")
@@ -113,9 +129,5 @@ for column in OUTPUTS:
     # plot prediction
     plot_predictions(real_temperature[:60], predicted_temperature[:60], column)
 
-    # plot data to see relationships in training and validation data
-    # epoch_list = list(range(1, len(hist.history['r2_keras']) + 1))  # values for x axis [1, 2, .., # of epochs]
-    # plt2.plot(epoch_list, hist.history['r2_keras'], epoch_list, hist.history['val_r2_keras'])
-    # plt2.legend(('Training r2_keras', 'Validation r2_keras'))
-    # plt2.savefig('./images/one_second_data/' + column + '_learning.png')
-    # plt.show()
+    plot_learning_rates(hist, column, 'r2_keras')
+    plot_learning_rates(hist, column, 'loss')

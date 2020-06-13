@@ -33,7 +33,7 @@ def plot_predictions(real, predicted, column):
     ax.set_xlabel('Second')
     ax.set_ylabel('Temperature')
     ax.legend()
-    plt.savefig('./images/ten_seconds_data/no_dp_' + column + '.png')
+    plt.savefig('./images/ten_seconds_data/' + column + '.png')
     plt.close(fig)
 
 
@@ -49,7 +49,7 @@ def plot_learning_rates(hist, column, score):
     ax.set_xlabel('Epoch')
     ax.set_ylabel('Score')
     ax.legend()
-    plt.savefig('./images/ten_seconds_data/no_dp_' + score + '_' + column + '.png')
+    plt.savefig('./images/ten_seconds_data/' + score + '_' + column + '.png')
     plt.close(fig)
 
 
@@ -79,14 +79,13 @@ for column in OUTPUTS:
 
     # input shape = (6,)
     model.add(LSTM(25, input_shape=(X_train.shape[1], 1), return_sequences=True))
-    # model.add(Dropout(0.2))
+    model.add(Dropout(0.2))
 
     model.add(LSTM(50, return_sequences=True))
-    # model.add(Dropout(0.2))
+    model.add(Dropout(0.2))
 
-    model.add(LSTM(50, return_sequences=True))
     model.add(LSTM(50))
-    # model.add(Dropout(0.2))
+    model.add(Dropout(0.2))
 
     model.add(Dense(10, activation='linear'))
 
@@ -96,17 +95,17 @@ for column in OUTPUTS:
                   metrics=[r2_keras])
 
     # save model to png
-    plot_model(model, to_file="./images/no_dp_ten_seconds_prediction.png", show_shapes=True, show_layer_names=True)
+    plot_model(model, to_file="./images/ten_seconds_prediction.png", show_shapes=True, show_layer_names=True)
 
     # train
-    BATCH_SIZE = 1000
+    BATCH_SIZE = 500
     EPOCHS = 5
 
     cbk_early_stopping = EarlyStopping(monitor='val_r2_keras', mode='max')
 
     hist = model.fit(X_train, y_train, BATCH_SIZE, epochs=EPOCHS,
-              validation_data=(X_test, y_test))
-              #callbacks=[cbk_early_stopping])
+              validation_data=(X_test, y_test),
+              callbacks=[cbk_early_stopping])
 
     # evaluate the model with the test data to get the scores on "real" data
     score = model.evaluate(X_test, y_test, verbose=2)
@@ -125,7 +124,7 @@ for column in OUTPUTS:
     print('Predicted: ', predicted_temperature[0])
     print('Real: ', real_temperature[0])
 
-    file = open("./results/ten_seconds_data/result_no_dp.txt", "a")
+    file = open("./results/ten_seconds_data/result.txt", "a")
     file.write("Column: " + column + "\n")
     file.write("Test loss, Test r2" + "\n")
     file.write(str(score[0]) + " " + str(score[1]) + "\n")
